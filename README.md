@@ -11,3 +11,5 @@ Additional resources:
 * Twitter bootstrap - front-end framework for faster and easier web development. Check out http://twitter.github.com/bootstrap for more information.
 
 * https://github.com/jessemiller/HamlPy - use a Haml like syntax for your Django templates.
+
+Check the live demo of this web app at http://profile-publisher.herokuapp.com/
