@@ -1,3 +1,4 @@
 Django==1.4.1
-pysqlite==2.6.3
+dj-database-url==0.2.1
+psycopg2==2.4.5
 hamlpy==0.82.2
