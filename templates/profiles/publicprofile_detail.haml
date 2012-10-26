@@ -1,0 +1,22 @@
+- extends "base.haml"
+
+- block content
+  .hero-unit
+    .row
+      .span6
+        %h2{'style':"margin-top: 0;"} Welcome to profile publisher
+        %p Publish your profile or search for other profiles
+        - if not user.is_authenticated
+          %a.btn.btn-primary{'href':"/register/"} Register now
+      .pull-right
+        %form.form-search{'method':"post", 'action':"/search/"}
+          - csrf_token
+          %input#query_user.input-medium.search-query{'type':"text", 'name':"query_user", 'placeholder':"Search username"}
+          %button.btn{'type':"submit"} Search
+  
+  - if object
+    - if object.profile.user == user
+      %h2 Your profile
+    - include '_profile_info.haml'
+
+      

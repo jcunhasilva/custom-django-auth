@@ -1,0 +1,24 @@
+.well
+  .row
+    .span6
+      %h3
+        {{ object.profile }} 
+        %small
+          ({{ object.profile.get_gender_display }}) 
+    .pull-right
+      - if object.public_bio
+        %span.label.label-success Public profile
+      - else
+        %span.label.label-important Private profile
+
+  - if object.public_bio
+    %i
+      {{ object.public_bio|linebreaks }}
+  
+  %h5
+    Hobbies
+  %p {{ object.profile.hobbies|linebreaks }}
+    
+          
+
+  

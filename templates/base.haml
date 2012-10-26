@@ -1,0 +1,22 @@
+!!!
+
+%head
+  %title Profile publisher
+  %link{'rel':"stylesheet", 'href':"{{ STATIC_URL }}stylesheets/bootstrap-2.1.0.min.css"}
+  
+%body
+  #header
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand.brand-custom{'href':"/"} Profile publisher
+          - if user.is_authenticated
+            .navbar-text.pull-right
+              Welcome {{user.username}} | 
+              %a{'href':"/logout/"} Logout
+          - else
+            %a.navbar-text.pull-right{'href':"/login/"} Login
+  #content-wrapper{'style':"margin-top: 50px;"}
+    .container
+      - block content
+  

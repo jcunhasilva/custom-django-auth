@@ -1,0 +1,16 @@
+- extends "base.haml"
+
+- block content
+  .span4.offset4
+    %h2 Login
+    .well
+      %form{'action':"", 'method':"post"}
+        - csrf_token
+        {{form}}
+        %p{'style':"margin-top: 5px;"}
+          %input.btn.btn-primary.pull-right{'type':"submit", 'value':"Login"}
+
+    %p
+      %a{'href':"/register/"} Create new profile
+    %p
+      %a{'href':"/password/reset/"} Forgot my password
